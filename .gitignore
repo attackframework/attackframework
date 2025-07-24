@@ -15,7 +15,7 @@
 !opensearch-dashboards/**
 !scripts/**
 
-# Ignored Directories
+# Ignored Sub-Directories
 opensearch/data/*
 opensearch/logs/*
 opensearch-dashboards/data/*

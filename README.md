@@ -59,3 +59,7 @@ scripts\start.cmd
 ```
 docker compose -f opensearch\docker-compose.yml -f opensearch-dashboards\docker-compose.yml down
 ```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
