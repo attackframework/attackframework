@@ -1,0 +1,9 @@
+{
+  "metrics": [
+    {
+      "metric": "Thread_Blocked_Time",
+      "dimension": [],
+      "type": "COUNTER"
+    }
+  ]
+}

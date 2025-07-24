@@ -1,0 +1,22 @@
+# Ignore everything by default
+*
+!*/
+
+# Allowed Files
+!.env
+!.gitattributes
+!.gitignore
+!LICENSE
+!Makefile
+!README.md
+
+# Allowed Directories
+!opensearch/**
+!opensearch-dashboards/**
+!scripts/**
+
+# Ignored Directories
+opensearch/data/*
+opensearch/logs/*
+opensearch-dashboards/data/*
+opensearch-dashboards/logs/*
