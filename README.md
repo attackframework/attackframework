@@ -1,6 +1,6 @@
 # Attack Framework
 
-> ⚠️ **Development Status**: This framework is under early development. Expect breaking changes and partial functionality while this banner is present.
+> ⚠️ **Development Status**: This framework is in early development. Expect breaking changes and partial functionality while this banner is present.
 
 This framework will establish a modular ecosystem for integrating offensive security tools with modern AI and data infrastructure.
 
@@ -13,8 +13,6 @@ This framework will establish a modular ecosystem for integrating offensive secu
   - [Review or adjust environment config](#review-or-adjust-environment-config)
   - [Ensure prereqs are installed](#ensure-prereqs-are-installed)
     - [Make](#make)
-      - [Nix](#nix)
-      - [Windows](#windows)
   - [View Make options and start the Docker stack](#view-make-options-and-start-the-docker-stack)
 - [Ideas and Feedback](#ideas-and-feedback)
 - [License](#license)
