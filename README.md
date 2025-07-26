@@ -16,6 +16,7 @@ This framework will establish a modular ecosystem for integrating offensive secu
       - [Nix](#nix)
       - [Windows](#windows)
   - [View Make options and start the Docker stack](#view-make-options-and-start-the-docker-stack)
+- [Ideas and Feedback](#ideas-and-feedback)
 - [License](#license)
 
 ---
@@ -77,6 +78,10 @@ cd attackframework
 make
 make docker-up
 ```
+
+## Ideas and Feedback
+
+We welcome ideas, feedback, and pull requests. Feel free to open a discussion, issue, or submit a PR.
 
 ## License
 
