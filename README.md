@@ -1,4 +1,4 @@
-# Attack Framework
+# Attack Framework™
 
 This project sets up a local stack for use by the Attack Framework. A modular ecosystem for integrating offensive security tools with modern AI and data infrastructure.
 
