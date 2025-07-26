@@ -12,7 +12,6 @@ This framework will establish a modular ecosystem for integrating offensive secu
   - [Clone the repo](#clone-the-repo)
   - [Review or adjust environment config](#review-or-adjust-environment-config)
   - [Ensure prereqs are installed](#ensure-prereqs-are-installed)
-    - [Make](#make)
   - [View Make options and start the Docker stack](#view-make-options-and-start-the-docker-stack)
 - [Ideas and Feedback](#ideas-and-feedback)
 - [License](#license)
