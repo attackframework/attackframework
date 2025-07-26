@@ -1,6 +1,8 @@
 # Attack Framework™
 
-This project sets up a local stack for use by the Attack Framework. A modular ecosystem for integrating offensive security tools with modern AI and data infrastructure.
+> ⚠️ **Development Status**: This framework is under development. Expect breaking changes and partial functionality while this banner is present.
+
+This framework will establish a modular ecosystem for integrating offensive security tools with modern AI and data infrastructure.
 
 ---
 
