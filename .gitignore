@@ -11,12 +11,5 @@
 !README.md
 
 # Allowed Directories
-!opensearch/**
-!opensearch-dashboards/**
-!scripts/**
-
-# Ignored Sub-Directories
-opensearch/data/*
-opensearch/logs/*
-opensearch-dashboards/data/*
-opensearch-dashboards/logs/*
+!docker/**
+!k8s/**

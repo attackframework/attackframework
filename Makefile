@@ -1,33 +1,64 @@
 # ================================
-# Attack Framework Docker Targets
+# Attack Framework Root Makefile
 # ================================
 
-# Config
-COMPOSEFILE_OPENSEARCH=./docker/opensearch/docker-compose.yml
-COMPOSEFILE_OPENSEARCH_DASHBOARDS=-./docker/opensearch-dashboards/docker-compose.yml
-COMPOSE_ALL=docker-compose -f $(COMPOSEFILE_OPENSEARCH) $(COMPOSEFILE_OPENSEARCH_DASHBOARDS)
+.DEFAULT_GOAL := help
 
 # -------------------------------
-# Primary Targets
+# Docker Targets
 # -------------------------------
 
-up:
-	./scripts/start.sh
+docker-up:
+	$(MAKE) -C docker up
 
-down:
-	./scripts/stop.sh
+docker-down:
+	$(MAKE) -C docker down
 
-restart:
-	./scripts/restart.sh
+docker-restart:
+	$(MAKE) -C docker restart
 
-logs:
-	./scripts/logs.sh
+docker-logs:
+	$(MAKE) -C docker logs
 
-ps:
-	./scripts/status.sh
+docker-ps:
+	$(MAKE) -C docker ps
 
-health:
-	./scripts/health.sh
+docker-health:
+	$(MAKE) -C docker health
 
-env:
-	cat .env
+docker-env:
+	$(MAKE) -C docker env
+
+# -------------------------------
+# Kubernetes Targets (placeholder)
+# -------------------------------
+
+k8s-up:
+	$(MAKE) -C k8s up
+
+k8s-down:
+	$(MAKE) -C k8s down
+
+# -------------------------------
+# Help
+# -------------------------------
+
+help:
+	@echo ""
+	@echo "Available targets:"
+	@echo ""
+	@echo "  docker-up           Start Docker containers"
+	@echo "  docker-down         Stop Docker containers"
+	@echo "  docker-restart      Restart Docker containers"
+	@echo "  docker-logs         Tail Docker logs"
+	@echo "  docker-ps           Show Docker container status"
+	@echo "  docker-health       Check OpenSearch cluster health"
+	@echo "  docker-env          Show resolved .env"
+	@echo ""
+	@echo "  k8s-up              (placeholder) Start K8s resources"
+	@echo "  k8s-down            (placeholder) Tear down K8s resources"
+	@echo ""
+	@echo "Usage:"
+	@echo "  make docker-up"
+	@echo "  make k8s-up"
+	@echo ""
