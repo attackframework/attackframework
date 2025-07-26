@@ -1,4 +1,4 @@
-# Attack Framework™
+# Attack Framework
 
 > ⚠️ **Development Status**: This framework is under early development. Expect breaking changes and partial functionality while this banner is present.
 
