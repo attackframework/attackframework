@@ -19,8 +19,8 @@ services:
       - ./config/opensearch.yml:/usr/share/opensearch/config/opensearch.yml
       - ./config/opensearch-performance-analyzer:/usr/share/opensearch/config/opensearch-performance-analyzer
     ports:
-      - "${OPENSEARCH_PORT}:9200"
-      - "${OPENSEARCH_DIAGNOSTICS_PORT}:9600"
+      - "${OPENSEARCH_BIND_ADDRESS}:${OPENSEARCH_PORT}:9200"
+      - "${OPENSEARCH_BIND_ADDRESS}:${OPENSEARCH_DIAGNOSTICS_PORT}:9600"
     networks:
       - opensearch-net
     healthcheck:

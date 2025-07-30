@@ -3,7 +3,7 @@ services:
     image: opensearchproject/opensearch-dashboards:${OPENSEARCH_VERSION}
     container_name: opensearch-dashboards
     ports:
-      - "${DASHBOARDS_PORT}:5601"
+      - "${OPENSEARCH_BIND_ADDRESS}:${DASHBOARDS_PORT}:5601"
     environment:
       - OPENSEARCH_HOSTS=["http://${OPENSEARCH_PUBLISH_HOST}:${OPENSEARCH_PORT}"]
       - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true
