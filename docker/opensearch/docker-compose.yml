@@ -1,6 +1,6 @@
 services:
   opensearch:
-    image: opensearchproject/opensearch:3.1.0
+    image: opensearchproject/opensearch:${OPENSEARCH_VERSION}
     container_name: ${NODE_NAME}
     environment:
       - cluster.name=${CLUSTER_NAME}
