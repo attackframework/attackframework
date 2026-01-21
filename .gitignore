@@ -13,3 +13,6 @@
 # Allowed Directories
 !docker/**
 !k8s/**
+
+# Ignore for local VCS
+.idea/
