@@ -9,10 +9,10 @@ This framework will establish a modular ecosystem for integrating offensive secu
 ## Table of Contents
 
 - [Quick Start](#quick-start)
+  - [Install prereqs](#Install-prereqs)
   - [Clone the repo](#clone-the-repo)
-  - [Review or adjust environment config](#review-or-adjust-environment-config)
-  - [Ensure prereqs are installed](#ensure-prereqs-are-installed)
-  - [View Make options and start the Docker stack](#view-make-options-and-start-the-docker-stack)
+  - [Review environment config](#review-environment-config)
+  - [Start the Docker stack](#start-the-docker-stack)
 - [Ideas and Feedback](#ideas-and-feedback)
 - [License](#license)
 
@@ -21,19 +21,7 @@ This framework will establish a modular ecosystem for integrating offensive secu
 
 ## Quick Start
 
-### Clone the repo
-
-```
-git clone https://github.com/attackframework/attackframework.git
-cd attackframework
-```
-
-### Review or adjust environment config
-
-- View and edit the .env file.
-- Ensure to update DATA_VOLUME_ROOT. This is where persistent data and logs will be stored. Keep it outside of this repo's root.
-
-### Ensure prereqs are installed
+### Install prereqs
 
 #### Docker
 
@@ -71,7 +59,7 @@ Linux: https://docs.docker.com/desktop/setup/install/linux/
 
 Windows: https://docs.docker.com/desktop/setup/install/windows-install/
 
-#### Make 
+#### Make
 
 Nix
 
@@ -105,13 +93,26 @@ https://community.chocolatey.org/packages/make
 choco install make
 ```
 
+### Clone the repo
+
+```
+git clone https://github.com/attackframework/attackframework.git
+cd attackframework
+```
+
+### Review environment config
+
+- View and edit the .env file.
+- Ensure to update `DATA_VOLUME_ROOT`. This is where persistent data and logs will be stored. Keep the path outside of this repo's root.
+- Adjust `OPENSEARCH_JAVA_OPTS` to manage heap size. Ensure it matches your desired range by adjusting the `Xms` and `Xmx` values.
+
 ### Configure the environment
 1. Edit .env file.
 2. Likely, you'll want to modify the DATA_VOLUME_ROOT variable. This is where persistent data and logs will be stored.
 3. Consider adjusting the OPENSEARCH_JAVA_OPTS variable to manage heap size.
 4. The remaining defaults should be fine in most cases.
 
-### View Make options and start the Docker stack
+### Start the Docker stack
 
 ```
 cd attackframework
