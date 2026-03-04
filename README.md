@@ -1,23 +1,8 @@
 # Attack Framework
 
-> ⚠️ **Development Status**: This framework is in early development. Expect breaking changes and partial functionality while this banner is present.
+> ⚠️ In early development. Expect breaking changes and partial functionality.
 
 This framework will establish a modular ecosystem for integrating offensive security tools with modern AI and data infrastructure.
-
----
-
-## Table of Contents
-
-- [Quick Start](#quick-start)
-  - [Install prereqs](#Install-prereqs)
-  - [Clone the repo](#clone-the-repo)
-  - [Review environment config](#review-environment-config)
-  - [Start the Docker stack](#start-the-docker-stack)
-- [Ideas and Feedback](#ideas-and-feedback)
-- [License](#license)
-
----
-
 
 ## Quick Start
 
@@ -105,12 +90,7 @@ cd attackframework
 - View and edit the .env file.
 - Ensure to update `DATA_VOLUME_ROOT`. This is where persistent data and logs will be stored. Keep the path outside of this repo's root.
 - Adjust `OPENSEARCH_JAVA_OPTS` to manage heap size. Ensure it matches your desired range by adjusting the `Xms` and `Xmx` values.
-
-### Configure the environment
-1. Edit .env file.
-2. Likely, you'll want to modify the DATA_VOLUME_ROOT variable. This is where persistent data and logs will be stored.
-3. Consider adjusting the OPENSEARCH_JAVA_OPTS variable to manage heap size.
-4. The remaining defaults should be fine in most cases.
+- The remaining defaults should be fine in most cases.
 
 ### Start the Docker stack
 
