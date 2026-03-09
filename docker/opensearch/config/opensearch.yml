@@ -1,19 +1,10 @@
-# ------------------------------------------------------------------------------
-# SECURITY SETTINGS
-# ------------------------------------------------------------------------------
-
+# Security settings
 plugins.security.disabled: true
 
-# ------------------------------------------------------------------------------
-# NETWORKING
-# ------------------------------------------------------------------------------
-
+# Networking
 network.host: 0.0.0.0
 transport.host: 0.0.0.0
 transport.publish_host: ${OPENSEARCH_PUBLISH_HOST}
 
-# ------------------------------------------------------------------------------
-# SINGLE-NODE DISCOVERY SETTINGS (REQUIRED IN DOCKER)
-# ------------------------------------------------------------------------------
-
+# Single-node discovery settings (required in Docker)
 discovery.type: single-node
