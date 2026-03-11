@@ -2,8 +2,8 @@
 server.host: "${OPENSEARCH_DASHBOARDS_BIND_ADDRESS}"
 server.port: ${OPENSEARCH_DASHBOARDS_PORT}
 server.ssl.enabled: true
-server.ssl.certificate: "/usr/share/opensearch-dashboards/config/certs/node.pem"
-server.ssl.key: "/usr/share/opensearch-dashboards/config/certs/node-key.pem"
+server.ssl.certificate: "/usr/share/opensearch-dashboards/config/certs/dashboards.pem"
+server.ssl.key: "/usr/share/opensearch-dashboards/config/certs/dashboards-key.pem"
 opensearch.hosts: ["https://opensearch.url:${OPENSEARCH_PORT}"]
 opensearch.ssl.verificationMode: certificate
 opensearch.ssl.certificateAuthorities: ["/usr/share/opensearch-dashboards/config/certs/root-ca.pem"]

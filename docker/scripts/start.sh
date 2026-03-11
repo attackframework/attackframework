@@ -97,6 +97,23 @@ prompt_password() {
   done
 }
 
+# On first run, prompt for initial password and confirmation until both match.
+prompt_initial_password_with_confirmation() {
+  local first_prompt="First run detected. Enter initial OpenSearch admin password (save this for future runs):"
+  local repeat_prompt="Repeat password:"
+  while true; do
+    prompt_password "$first_prompt"
+    local pw1="$PASSWORD_INPUT"
+    prompt_password "$repeat_prompt"
+    local pw2="$PASSWORD_INPUT"
+    if [ "$pw1" = "$pw2" ]; then
+      PASSWORD_INPUT="$pw1"
+      return 0
+    fi
+    print_error "Passwords do not match. Try again."
+  done
+}
+
 validate_admin_password() {
   local pw="$1"
   local code
@@ -111,7 +128,7 @@ cleanup_runtime_passwords() {
 trap cleanup_runtime_passwords EXIT
 
 if [ "$FIRST_START" = true ]; then
-  prompt_password "First run detected. Enter initial OpenSearch admin password (save this for future runs):"
+  prompt_initial_password_with_confirmation
   export OPENSEARCH_INITIAL_ADMIN_PASSWORD="$PASSWORD_INPUT"
   export OPENSEARCH_DASHBOARDS_PASSWORD="$PASSWORD_INPUT"
   print_prompt "OpenSearch stores only the hash. Dashboards authenticates to OpenSearch using this credential."
