@@ -14,6 +14,9 @@ docker-up:
 docker-down:
 	$(MAKE) -C docker down
 
+docker-destroy:
+	$(MAKE) -C docker destroy
+
 docker-restart:
 	$(MAKE) -C docker restart
 
@@ -48,7 +51,8 @@ help:
 	@echo "Available targets:"
 	@echo ""
 	@echo "  docker-up           Start Docker containers"
-	@echo "  docker-down         Stop Docker containers"
+	@echo "  docker-down         Stop containers (keep containers/network)"
+	@echo "  docker-destroy      Stop and remove containers/network"
 	@echo "  docker-restart      Restart Docker containers"
 	@echo "  docker-logs         Tail Docker logs"
 	@echo "  docker-ps           Show Docker container status"

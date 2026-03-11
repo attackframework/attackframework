@@ -17,6 +17,9 @@ up:
 down:
 	./scripts/stop.sh
 
+destroy:
+	./scripts/destroy.sh
+
 restart:
 	./scripts/restart.sh
 

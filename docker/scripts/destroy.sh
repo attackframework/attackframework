@@ -12,4 +12,4 @@ done < "$ENV_FILE"
 docker compose \
   -f ./opensearch/docker-compose.yml \
   -f ./opensearch-dashboards/docker-compose.yml \
-  stop
+  down --remove-orphans

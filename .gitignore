@@ -16,3 +16,6 @@
 
 # Ignore for local VCS
 .idea/
+
+# Local certs (prefer DATA_VOLUME_ROOT/certs at runtime)
+docker/opensearch/certs/

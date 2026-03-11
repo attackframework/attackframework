@@ -1,10 +1,24 @@
-# Security settings
-plugins.security.disabled: true
+# Security: enabled (TLS + auth). Do not set plugins.security.disabled or set to false.
+# TLS cert paths are relative to config dir; certs live in config/certs/
+plugins.security.ssl.transport.pemcert_filepath: certs/node.pem
+plugins.security.ssl.transport.pemkey_filepath: certs/node-key.pem
+plugins.security.ssl.transport.pemtrustedcas_filepath: certs/root-ca.pem
+plugins.security.ssl.http.enabled: true
+plugins.security.ssl.http.pemcert_filepath: certs/node.pem
+plugins.security.ssl.http.pemkey_filepath: certs/node-key.pem
+plugins.security.ssl.http.pemtrustedcas_filepath: certs/root-ca.pem
+plugins.security.allow_default_init_securityindex: true
+plugins.security.nodes_dn:
+  - "CN=opensearch,OU=Dev,O=AttackFramework,L=City,ST=State,C=US"
 
-# Networking
-network.host: 0.0.0.0
-transport.host: 0.0.0.0
+# HTTP/2 over HTTPS (reactor-netty4-secure)
+http.type: reactor-netty4-secure
+
+# Networking and HTTP port: substituted from .env at container start (OPENSEARCH_BIND_ADDRESS, OPENSEARCH_PORT)
+network.host: ${OPENSEARCH_BIND_ADDRESS}
+transport.host: ${OPENSEARCH_BIND_ADDRESS}
 transport.publish_host: ${OPENSEARCH_PUBLISH_HOST}
+http.port: ${OPENSEARCH_PORT}
 
 # Single-node discovery settings (required in Docker)
 discovery.type: single-node
