@@ -5,14 +5,14 @@ services:
       args:
         OPENSEARCH_VERSION: ${OPENSEARCH_VERSION}
     image: attackframework-opensearch:${OPENSEARCH_VERSION}
-    container_name: ${NODE_NAME}
+    container_name: opensearch
     environment:
       - cluster.name=${CLUSTER_NAME}
-      - node.name=${NODE_NAME}
+      - node.name=opensearch
       - bootstrap.memory_lock=true
       - OPENSEARCH_JAVA_OPTS=${OPENSEARCH_JAVA_OPTS}
-      - DISABLE_INSTALL_DEMO_CONFIG=${DISABLE_INSTALL_DEMO_CONFIG}
-      - DISABLE_SECURITY_PLUGIN=${DISABLE_SECURITY_PLUGIN}
+      - DISABLE_INSTALL_DEMO_CONFIG=false
+      - DISABLE_SECURITY_PLUGIN=false
       - OPENSEARCH_PUBLISH_HOST=${OPENSEARCH_PUBLISH_HOST}
       - OPENSEARCH_BIND_ADDRESS=${OPENSEARCH_BIND_ADDRESS}
       - OPENSEARCH_PORT=${OPENSEARCH_PORT}
