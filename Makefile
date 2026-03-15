@@ -9,38 +9,38 @@
 # -------------------------------
 
 docker-up:
-	$(MAKE) -C docker up
+	@$(MAKE) --no-print-directory -C docker up
 
 docker-down:
-	$(MAKE) -C docker down
+	@$(MAKE) --no-print-directory -C docker down
 
 docker-destroy:
-	$(MAKE) -C docker destroy
+	@$(MAKE) --no-print-directory -C docker destroy
 
 docker-restart:
-	$(MAKE) -C docker restart
+	@$(MAKE) --no-print-directory -C docker restart
 
 docker-logs:
-	$(MAKE) -C docker logs
+	@$(MAKE) --no-print-directory -C docker logs
 
 docker-ps:
-	$(MAKE) -C docker ps
+	@$(MAKE) --no-print-directory -C docker ps
 
 docker-health:
-	$(MAKE) -C docker health
+	@$(MAKE) --no-print-directory -C docker health
 
 docker-env:
-	$(MAKE) -C docker env
+	@$(MAKE) --no-print-directory -C docker env
 
 # -------------------------------
 # Kubernetes Targets (placeholder)
 # -------------------------------
 
 k8s-up:
-	$(MAKE) -C k8s up
+	@$(MAKE) --no-print-directory -C k8s up
 
 k8s-down:
-	$(MAKE) -C k8s down
+	@$(MAKE) --no-print-directory -C k8s down
 
 # -------------------------------
 # Help

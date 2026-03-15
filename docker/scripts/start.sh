@@ -100,7 +100,7 @@ prompt_password() {
 # On first run, prompt for initial password and confirmation until both match.
 prompt_initial_password_with_confirmation() {
   local first_prompt="First run detected. Enter initial OpenSearch admin password (save this for future runs):"
-  local repeat_prompt="Repeat password:"
+  local repeat_prompt="Repeat initial OpenSearch admin password:"
   while true; do
     prompt_password "$first_prompt"
     local pw1="$PASSWORD_INPUT"
@@ -137,7 +137,7 @@ if [ "$FIRST_START" = true ]; then
   docker compose \
     -f ./opensearch/docker-compose.yml \
     -f ./opensearch-dashboards/docker-compose.yml \
-    up -d --build opensearch
+    up -d --build --wait --wait-timeout 180 opensearch
 
   print_prompt "Waiting for OpenSearch to become reachable..."
   if ! wait_opensearch_reachable; then
@@ -153,12 +153,12 @@ if [ "$FIRST_START" = true ]; then
   docker compose \
     -f ./opensearch/docker-compose.yml \
     -f ./opensearch-dashboards/docker-compose.yml \
-    up -d --build opensearch-dashboards
+    up -d --build --wait --wait-timeout 180 opensearch-dashboards
 else
   docker compose \
     -f ./opensearch/docker-compose.yml \
     -f ./opensearch-dashboards/docker-compose.yml \
-    up -d --build opensearch
+    up -d --build --wait --wait-timeout 180 opensearch
 
   print_prompt "Waiting for OpenSearch to become reachable..."
   if ! wait_opensearch_reachable; then
@@ -186,5 +186,5 @@ else
   docker compose \
     -f ./opensearch/docker-compose.yml \
     -f ./opensearch-dashboards/docker-compose.yml \
-    up -d --build opensearch-dashboards
+    up -d --build --wait --wait-timeout 180 opensearch-dashboards
 fi

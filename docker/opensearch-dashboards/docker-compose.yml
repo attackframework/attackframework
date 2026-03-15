@@ -15,8 +15,6 @@ services:
       - OPENSEARCH_PORT=${OPENSEARCH_PORT}
       - OPENSEARCH_HOSTS=["https://${OPENSEARCH_PUBLISH_HOST}:${OPENSEARCH_PORT}"]
       - DISABLE_SECURITY_DASHBOARDS_PLUGIN=false
-      - OPENSEARCH_DEFAULT_DATASOURCE=true
-      - OPENSEARCH_DATASOURCES=[{"id":"default","name":"Default","type":"opensearch","endpoint":"https://${OPENSEARCH_PUBLISH_HOST}:${OPENSEARCH_PORT}"}]
       - OPENSEARCH_USERNAME=admin
       - OPENSEARCH_PASSWORD=${OPENSEARCH_DASHBOARDS_PASSWORD:-}
     volumes:
@@ -30,6 +28,12 @@ services:
     depends_on:
       opensearch:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "code=$$(curl -sk -o /dev/null -w '%{http_code}' https://localhost:${OPENSEARCH_DASHBOARDS_PORT}); test \"$$code\" = '200' || test \"$$code\" = '302' || test \"$$code\" = '401' || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 45s
 
 networks:
   opensearch-net:

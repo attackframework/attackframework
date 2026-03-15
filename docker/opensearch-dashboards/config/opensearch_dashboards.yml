@@ -9,7 +9,8 @@ opensearch.ssl.verificationMode: certificate
 opensearch.ssl.certificateAuthorities: ["/usr/share/opensearch-dashboards/config/certs/root-ca.pem"]
 logging.dest: stdout
 
-# The new OpenSearch Dashboards Experience
-data_source.enabled: true
-workspace.enabled: true
-explore.enabled: true
+# Workspaces/data-source UI are intentionally disabled in this repo.
+# Isolation is handled by running separate clusters.
+data_source.enabled: false
+workspace.enabled: false
+explore.enabled: false
